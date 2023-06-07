@@ -22549,7 +22549,7 @@ parcelRequire = (function (e, r, t, n) {
                 }
                 var o = document.querySelector(".loaderBox");
                 setTimeout(function () {
-                    o.style.display = "none";
+                    
                 }, 2e3);
                 var a,
                     s = { enableWind: !1 },
