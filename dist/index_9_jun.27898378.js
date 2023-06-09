@@ -22516,7 +22516,7 @@ parcelRequire = (function (e, r, t, n) {
             function (require, module, exports) {
                 "use strict";
                 require("./styles.css");
-                var e = r(require("three")),
+                var e = o(require("three")),
                     t = require("three/examples/jsm/libs/dat.gui.module"),
                     i = require("three/examples/jsm/controls/OrbitControls");
                 function n(e) {
@@ -22527,133 +22527,138 @@ parcelRequire = (function (e, r, t, n) {
                         return e ? i : t;
                     })(e);
                 }
-                function r(e, t) {
+                function o(e, t) {
                     if (!t && e && e.__esModule) return e;
                     if (null === e || ("object" != typeof e && "function" != typeof e)) return { default: e };
                     var i = n(t);
                     if (i && i.has(e)) return i.get(e);
-                    var r = {},
-                        o = Object.defineProperty && Object.getOwnPropertyDescriptor;
+                    var o = {},
+                        r = Object.defineProperty && Object.getOwnPropertyDescriptor;
                     for (var a in e)
                         if ("default" !== a && Object.prototype.hasOwnProperty.call(e, a)) {
-                            var s = o ? Object.getOwnPropertyDescriptor(e, a) : null;
-                            s && (s.get || s.set) ? Object.defineProperty(r, a, s) : (r[a] = e[a]);
+                            var s = r ? Object.getOwnPropertyDescriptor(e, a) : null;
+                            s && (s.get || s.set) ? Object.defineProperty(o, a, s) : (o[a] = e[a]);
                         }
-                    return (r.default = e), i && i.set(e, r), r;
+                    return (o.default = e), i && i.set(e, o), o;
                 }
-                var o,
-                    a = { enableWind: !1 },
-                    s = [],
+                var r = document.querySelector(".loaderBox");
+                (document.body.style.overflow = "hidden"),
+                    setTimeout(function () {
+                        r.style.display = "none";
+                    }, 1500);
+                var a,
+                    s = { enableWind: !1 },
+                    l = [],
                     p = 0,
-                    l = 0.03,
-                    c = 1 - l,
-                    h = 0.1,
-                    u = 25,
-                    d = 25,
-                    w = 12,
-                    f = V(u * d, u * w),
-                    m = new A(d, w),
-                    g = 981 * 1.4,
-                    v = new e.Vector3(0, -g, 0).multiplyScalar(h),
-                    y = 0.02,
-                    b = y * y,
-                    x = [],
+                    c = 0.03,
+                    u = 1 - c,
+                    d = 0.1,
+                    h = 25,
+                    w = 25,
+                    f = 12,
+                    m = P(h * w, h * f),
+                    g = new A(w, f),
+                    v = 981 * 1.4,
+                    y = new e.Vector3(0, -v, 0).multiplyScalar(d),
+                    b = 0.02,
+                    x = b * b,
+                    S = [],
                     M = new e.Vector3(0, 0, 0),
-                    S = new e.Vector3();
-                function V(e, t) {
-                    return function (i, n, r) {
-                        var o = (i - 0.5) * e,
+                    V = new e.Vector3();
+                function P(e, t) {
+                    return function (i, n, o) {
+                        var r = (i - 0.5) * e,
                             a = (n + 0.5) * t;
-                        r.set(o, a, 0);
+                        o.set(r, a, 0);
                     };
                 }
-                function P(t, i, n, r) {
+                function j(t, i, n, o) {
                     (this.position = new e.Vector3()),
                         (this.previous = new e.Vector3()),
                         (this.original = new e.Vector3()),
                         (this.a = new e.Vector3(0, 0, 0)),
-                        (this.mass = r),
-                        (this.invMass = 1 / r),
+                        (this.mass = o),
+                        (this.invMass = 1 / o),
                         (this.tmp = new e.Vector3()),
                         (this.tmp2 = new e.Vector3()),
-                        f(t, i, this.position),
-                        f(t, i, this.previous),
-                        f(t, i, this.original);
+                        m(t, i, this.position),
+                        m(t, i, this.previous),
+                        m(t, i, this.original);
                 }
-                (P.prototype.addForce = function (e) {
+                (j.prototype.addForce = function (e) {
                     this.a.add(this.tmp2.copy(e).multiplyScalar(this.invMass));
                 }),
-                    (P.prototype.integrate = function (e) {
+                    (j.prototype.integrate = function (e) {
                         var t = this.tmp.subVectors(this.position, this.previous);
-                        t.multiplyScalar(c).add(this.position), t.add(this.a.multiplyScalar(e)), (this.tmp = this.previous), (this.previous = this.position), (this.position = t), this.a.set(0, 0, 0);
+                        t.multiplyScalar(u).add(this.position), t.add(this.a.multiplyScalar(e)), (this.tmp = this.previous), (this.previous = this.position), (this.position = t), this.a.set(0, 0, 0);
                     });
-                var j,
-                    W,
+                var W,
+                    q,
                     z,
                     O,
                     D,
-                    q,
-                    L = new e.Vector3();
+                    L,
+                    T = new e.Vector3();
                 function k(e, t, i) {
-                    L.subVectors(t.position, e.position);
-                    var n = L.length();
+                    T.subVectors(t.position, e.position);
+                    var n = T.length();
                     if (0 !== n) {
-                        var r = L.multiplyScalar(1 - i / n).multiplyScalar(0.5);
-                        e.position.add(r), t.position.sub(r);
+                        var o = T.multiplyScalar(1 - i / n).multiplyScalar(0.5);
+                        e.position.add(o), t.position.sub(o);
                     }
                 }
                 function A(e, t) {
                     (e = e || 10), (t = t || 10), (this.w = e), (this.h = t);
                     var i,
                         n,
-                        r = [],
-                        o = [];
-                    for (n = 0; n <= t; n++) for (i = 0; i <= e; i++) r.push(new P(i / e, n / t, 0, h));
-                    for (n = 0; n < t; n++) for (i = 0; i < e; i++) o.push([r[a(i, n)], r[a(i, n + 1)], u]), o.push([r[a(i, n)], r[a(i + 1, n)], u]);
-                    for (i = e, n = 0; n < t; n++) o.push([r[a(i, n)], r[a(i, n + 1)], u]);
-                    for (n = t, i = 0; i < e; i++) o.push([r[a(i, n)], r[a(i + 1, n)], u]);
+                        o = [],
+                        r = [];
+                    for (n = 0; n <= t; n++) for (i = 0; i <= e; i++) o.push(new j(i / e, n / t, 0, d));
+                    for (n = 0; n < t; n++) for (i = 0; i < e; i++) r.push([o[a(i, n)], o[a(i, n + 1)], h]), r.push([o[a(i, n)], o[a(i + 1, n)], h]);
+                    for (i = e, n = 0; n < t; n++) r.push([o[a(i, n)], o[a(i, n + 1)], h]);
+                    for (n = t, i = 0; i < e; i++) r.push([o[a(i, n)], o[a(i + 1, n)], h]);
                     function a(t, i) {
                         return t + i * (e + 1);
                     }
-                    (this.particles = r), (this.constraints = o), (this.index = a);
+                    (this.particles = o), (this.constraints = r), (this.index = a);
                 }
                 function E(t) {
                     var i,
                         n,
-                        r,
                         o,
-                        s,
-                        p,
+                        r,
+                        a,
                         l,
+                        p,
                         c = 20 * Math.cos(t / 7e3) + 40;
-                    if ((M.set(Math.sin(t / 2e3), Math.cos(t / 3e3), Math.sin(t / 1e3)), M.normalize(), M.multiplyScalar(c), a.enableWind)) {
-                        var h,
-                            u = new e.Vector3(),
-                            d = D.index,
+                    if ((M.set(Math.sin(t / 2e3), Math.cos(t / 3e3), Math.sin(t / 1e3)), M.normalize(), M.multiplyScalar(c), s.enableWind)) {
+                        var u,
+                            d = new e.Vector3(),
+                            h = D.index,
                             w = D.attributes.normal;
-                        for (o = m.particles, i = 0, r = d.count; i < r; i += 3) for (n = 0; n < 3; n++) (h = d.getX(i + n)), u.fromBufferAttribute(w, h), S.copy(u).normalize().multiplyScalar(u.dot(M)), o[h].addForce(S);
+                        for (r = g.particles, i = 0, o = h.count; i < o; i += 3) for (n = 0; n < 3; n++) (u = h.getX(i + n)), d.fromBufferAttribute(w, u), V.copy(d).normalize().multiplyScalar(d.dot(M)), r[u].addForce(V);
                     }
-                    for (i = 0, r = (o = m.particles).length; i < r; i++) s = o[i];
-                    for (i = 0, r = (o = m.particles).length; i < r; i++) (s = o[i]).addForce(v), s.integrate(b);
-                    for (r = (p = m.constraints).length, i = 0; i < r; i++) k((l = p[i])[0], l[1], l[2]);
-                    for (H(), i = 0, r = x.length; i < r; i++) o[x[i]];
+                    for (i = 0, o = (r = g.particles).length; i < o; i++) a = r[i];
+                    for (i = 0, o = (r = g.particles).length; i < o; i++) (a = r[i]).addForce(y), a.integrate(x);
+                    for (o = (l = g.constraints).length, i = 0; i < o; i++) k((p = l[i])[0], p[1], p[2]);
+                    for (F(), i = 0, o = S.length; i < o; i++) r[S[i]];
                 }
-                for (var F = -312.5; F < 312.5; F += 25) p++, s.push({ point: F, pin: 1 });
+                for (var B = -312.5; B < 312.5; B += 25) p++, l.push({ point: B, pin: 1 });
+                function F() {
+                    for (var e = g.particles[0].original.x, t = g.particles[0].original.x, i = g.particles[0].original.y, n = 1; n < g.particles.length; n++) {
+                        var o = g.particles[n];
+                        o.original.x < e && (e = o.original.x), o.original.x > t && (t = o.original.x), o.original.y > i && (i = o.original.y);
+                    }
+                    for (var r = 0; r < g.particles.length; r++) for (var a = g.particles[r], s = 0; s < l.length; s++) a.original.x.toFixed(1) == l[s].point && 1 == l[s].pin && a.position.copy(a.original);
+                }
                 function H() {
-                    for (var e = m.particles[0].original.x, t = m.particles[0].original.x, i = m.particles[0].original.y, n = 1; n < m.particles.length; n++) {
-                        var r = m.particles[n];
-                        r.original.x < e && (e = r.original.x), r.original.x > t && (t = r.original.x), r.original.y > i && (i = r.original.y);
-                    }
-                    for (var o = 0; o < m.particles.length; o++) for (var a = m.particles[o], p = 0; p < s.length; p++) a.original.x.toFixed(1) == s[p].point && 1 == s[p].pin && a.position.copy(a.original);
-                }
-                function R() {
-                    (j = document.createElement("div")),
-                        document.body.appendChild(j),
+                    (W = document.createElement("div")),
+                        document.body.appendChild(W),
                         (z = new e.Scene()),
-                        ((W = new e.PerspectiveCamera(24, window.innerWidth / window.innerHeight, 1, 9e5)).position.x = 0),
-                        (W.position.y = 0),
-                        (W.position.z = 600),
-                        W.lookAt(0, 0, 0),
+                        ((q = new e.PerspectiveCamera(24, window.innerWidth / window.innerHeight, 1, 9e5)).position.x = 0),
+                        (q.position.y = 0),
+                        (q.position.z = 600),
+                        q.lookAt(0, 0, 0),
                         z.add(new e.AmbientLight(6710886));
                     var t = new e.DirectionalLight(14674943, 1);
                     t.position.set(50, 200, 100), t.position.multiplyScalar(1.3), (t.castShadow = !0), (t.shadow.mapSize.width = 1024), (t.shadow.mapSize.height = 1024);
@@ -22661,50 +22666,56 @@ parcelRequire = (function (e, r, t, n) {
                     (t.shadow.camera.left = -i), (t.shadow.camera.right = i), (t.shadow.camera.top = i), (t.shadow.camera.bottom = -i), (t.shadow.camera.far = 1e3), z.add(t);
                     var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.7/dist/texturecloth4.3846b0b6.jpeg"));
                     (n.anisotropy = 16),
-                        ((o = new e.MeshLambertMaterial({ wireframe: !1, side: e.DoubleSide, alphaTest: 0.5 })).map = n),
-                        (D = new e.ParametricBufferGeometry(f, m.w, m.h)),
-                        (q = new e.Mesh(D, o)).position.set(0, -300, 0),
-                        (q.castShadow = !0),
-                        z.add(q),
-                        (q.customDepthMaterial = new e.MeshDepthMaterial({ depthPacking: e.RGBADepthPacking, alphaTest: 0.5 })),
-                        (q.customDepthMaterial.map = n);
-                    var r = document.querySelector(".webgl");
-                    (O = new e.WebGLRenderer({ canvas: r, antialias: !0, alpha: !0 })).setPixelRatio(window.devicePixelRatio),
+                        ((a = new e.MeshLambertMaterial({ wireframe: !1, side: e.DoubleSide, alphaTest: 0.5 })).map = n),
+                        (D = new e.ParametricBufferGeometry(m, g.w, g.h)),
+                        (L = new e.Mesh(D, a)).position.set(0, -300, 0),
+                        (L.castShadow = !0),
+                        z.add(L),
+                        (L.customDepthMaterial = new e.MeshDepthMaterial({ depthPacking: e.RGBADepthPacking, alphaTest: 0.5 })),
+                        (L.customDepthMaterial.map = n);
+                    var o = document.querySelector(".webgl");
+                    (O = new e.WebGLRenderer({ canvas: o, antialias: !0, alpha: !0 })).setPixelRatio(window.devicePixelRatio),
                         O.setSize(window.innerWidth, window.innerHeight),
-                        j.appendChild(O.domElement),
+                        W.appendChild(O.domElement),
                         (O.outputEncoding = e.sRGBEncoding),
                         (O.shadowMap.enabled = !0),
-                        window.addEventListener("resize", T, !1);
-                    var a = new e.AxesHelper(5e3);
-                    (a.visible = !1), z.add(a);
+                        window.addEventListener("resize", R, !1);
+                    var r = new e.AxesHelper(5e3);
+                    (r.visible = !1), z.add(r);
                 }
-                function T() {
-                    (W.aspect = window.innerWidth / window.innerHeight), W.updateProjectionMatrix(), O.setSize(window.innerWidth, window.innerHeight);
+                function R() {
+                    (q.aspect = window.innerWidth / window.innerHeight), q.updateProjectionMatrix(), O.setSize(window.innerWidth, window.innerHeight);
                 }
-                s.push({ point: 312.5, pin: 1 }), R(), X(0);
-                var B = s.length;
-                function C() {
+                l.push({ point: 312.5, pin: 1 }), H(), _(0);
+                var C = l.length;
+                function G() {
                     setTimeout(function () {
-                        console.log("pinPoints[pp]:", s[B]), s[B] && (s[B].pin = 0), --B > 0 && C();
+                        if ((console.log("pinPoints[pp]:", l[C]), l[C] && (l[C].pin = 0), --C > 0)) G();
+                        else {
+                            var e = document.querySelector(".webgl");
+                            setTimeout(function () {
+                                (e.style.display = "none"), (document.body.style.overflow = "auto");
+                            }, 2e3);
+                        }
                     }, 5);
                 }
-                var G = !0;
-                function X(e) {
-                    requestAnimationFrame(X),
+                var X = !0;
+                function _(e) {
+                    requestAnimationFrame(_),
                         setTimeout(function () {
                             E(e);
                         }, 0),
-                        _();
+                        N();
                 }
-                function _() {
-                    for (var e = m.particles, t = 0, i = e.length; t < i; t++) {
+                function N() {
+                    for (var e = g.particles, t = 0, i = e.length; t < i; t++) {
                         var n = e[t].position;
                         D.attributes.position.setXYZ(t, n.x, n.y, n.z);
                     }
-                    (D.attributes.position.needsUpdate = !0), D.computeVertexNormals(), O.render(z, W);
+                    (D.attributes.position.needsUpdate = !0), D.computeVertexNormals(), O.render(z, q);
                 }
                 window.addEventListener("wheel", function () {
-                    G && C(), (G = !1);
+                    X && G(), (X = !1);
                 });
             },
             { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.7/dist/texturecloth4.3846b0b6.jpeg": "MUgx" },
@@ -22714,4 +22725,4 @@ parcelRequire = (function (e, r, t, n) {
     ["saB4"],
     null
 );
-//# sourceMappingURL=/index_9_jun.443e9fda.js.map
+//# sourceMappingURL=/index_9_jun.27898378.js.map

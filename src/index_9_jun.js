@@ -11,6 +11,12 @@ import { log } from "three";
  * Cloth Simulation using a relaxed constraints solver
  */
 
+let loaderBox = document.querySelector(".loaderBox");
+document.body.style.overflow = "hidden";
+
+setTimeout(() => {
+  loaderBox.style.display = "none";
+}, 1500);
 
 var params = {
   enableWind: false,
@@ -465,9 +471,13 @@ function unpinPoints() {
     if (unpinCount > 0) {
       unpinPoints();
     } else {
-      // setTimeout(() => {
-      //   window.location.replace("https://wewantdesign.webflow.io/");
-      // }, 2000);
+      const canvas = document.querySelector(".webgl");
+      
+      setTimeout(() => {
+        canvas.style.display="none";
+        document.body.style.overflow = "auto";
+
+      }, 2000);
     }
   }, 5);
 }
@@ -476,6 +486,7 @@ let dropcloth = true;
 window.addEventListener("wheel", function () {
   if (dropcloth) {
     unpinPoints();
+    
   }
   dropcloth = false;
 });
