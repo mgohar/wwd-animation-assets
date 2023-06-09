@@ -329,8 +329,7 @@ function init() {
   // scene
 
   scene = new THREE.Scene();
-  var bgLoader = new THREE.TextureLoader();
-  var bgTexture = bgLoader.load(require("./textures/bg-texture2.png"));
+
   // scene.background = bgTexture;
   // scene.fog = new THREE.Fog(0xcce0ff, 500, 10000);
 
@@ -374,9 +373,7 @@ function init() {
 
   var loader = new THREE.TextureLoader();
   var clothTexture = loader.load(require("./textures/texturecloth3.png"));
-  var clothTexture1 = loader.load(require("./textures/texturecloth3.png"));
   clothTexture.anisotropy = 16;
-  clothTexture1.anisotropy = 16;
 
   clothMaterial = new THREE.MeshLambertMaterial({
     wireframe: false,
