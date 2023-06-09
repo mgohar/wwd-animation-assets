@@ -22506,9 +22506,9 @@ parcelRequire = (function (e, r, t, n) {
             },
             { "../../../build/three.module.js": "gBK8" },
         ],
-        lnO1: [
+        MUgx: [
             function (require, module, exports) {
-                module.exports = "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png";
+                module.exports = "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.7/dist/texturecloth4.3846b0b6.jpeg";
             },
             {},
         ],
@@ -22587,8 +22587,8 @@ parcelRequire = (function (e, r, t, n) {
                         var t = this.tmp.subVectors(this.position, this.previous);
                         t.multiplyScalar(c).add(this.position), t.add(this.a.multiplyScalar(e)), (this.tmp = this.previous), (this.previous = this.position), (this.position = t), this.a.set(0, 0, 0);
                     });
-                var W,
-                    j,
+                var j,
+                    W,
                     z,
                     O,
                     D,
@@ -22647,19 +22647,19 @@ parcelRequire = (function (e, r, t, n) {
                     for (var o = 0; o < m.particles.length; o++) for (var a = m.particles[o], p = 0; p < s.length; p++) a.original.x.toFixed(1) == s[p].point && 1 == s[p].pin && a.position.copy(a.original);
                 }
                 function R() {
-                    (W = document.createElement("div")),
-                        document.body.appendChild(W),
+                    (j = document.createElement("div")),
+                        document.body.appendChild(j),
                         (z = new e.Scene()),
-                        ((j = new e.PerspectiveCamera(24, window.innerWidth / window.innerHeight, 1, 9e5)).position.x = 0),
-                        (j.position.y = 0),
-                        (j.position.z = 700),
-                        j.lookAt(0, 0, 0),
+                        ((W = new e.PerspectiveCamera(24, window.innerWidth / window.innerHeight, 1, 9e5)).position.x = 0),
+                        (W.position.y = 0),
+                        (W.position.z = 600),
+                        W.lookAt(0, 0, 0),
                         z.add(new e.AmbientLight(6710886));
                     var t = new e.DirectionalLight(14674943, 1);
                     t.position.set(50, 200, 100), t.position.multiplyScalar(1.3), (t.castShadow = !0), (t.shadow.mapSize.width = 1024), (t.shadow.mapSize.height = 1024);
                     var i = 300;
                     (t.shadow.camera.left = -i), (t.shadow.camera.right = i), (t.shadow.camera.top = i), (t.shadow.camera.bottom = -i), (t.shadow.camera.far = 1e3), z.add(t);
-                    var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png"));
+                    var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.7/dist/texturecloth4.3846b0b6.jpeg"));
                     (n.anisotropy = 16),
                         ((o = new e.MeshLambertMaterial({ wireframe: !1, side: e.DoubleSide, alphaTest: 0.5 })).map = n),
                         (D = new e.ParametricBufferGeometry(f, m.w, m.h)),
@@ -22671,7 +22671,7 @@ parcelRequire = (function (e, r, t, n) {
                     var r = document.querySelector(".webgl");
                     (O = new e.WebGLRenderer({ canvas: r, antialias: !0, alpha: !0 })).setPixelRatio(window.devicePixelRatio),
                         O.setSize(window.innerWidth, window.innerHeight),
-                        W.appendChild(O.domElement),
+                        j.appendChild(O.domElement),
                         (O.outputEncoding = e.sRGBEncoding),
                         (O.shadowMap.enabled = !0),
                         window.addEventListener("resize", T, !1);
@@ -22679,7 +22679,7 @@ parcelRequire = (function (e, r, t, n) {
                     (a.visible = !1), z.add(a);
                 }
                 function T() {
-                    (j.aspect = window.innerWidth / window.innerHeight), j.updateProjectionMatrix(), O.setSize(window.innerWidth, window.innerHeight);
+                    (W.aspect = window.innerWidth / window.innerHeight), W.updateProjectionMatrix(), O.setSize(window.innerWidth, window.innerHeight);
                 }
                 s.push({ point: 312.5, pin: 1 }), R(), X(0);
                 var B = s.length;
@@ -22701,17 +22701,17 @@ parcelRequire = (function (e, r, t, n) {
                         var n = e[t].position;
                         D.attributes.position.setXYZ(t, n.x, n.y, n.z);
                     }
-                    (D.attributes.position.needsUpdate = !0), D.computeVertexNormals(), O.render(z, j);
+                    (D.attributes.position.needsUpdate = !0), D.computeVertexNormals(), O.render(z, W);
                 }
                 window.addEventListener("wheel", function () {
                     G && C(), (G = !1);
                 });
             },
-            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png": "lnO1" },
+            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.7/dist/texturecloth4.3846b0b6.jpeg": "MUgx" },
         ],
     },
     {},
     ["saB4"],
     null
 );
-//# sourceMappingURL=/index_9_jun.8cdd837d.js.map
+//# sourceMappingURL=/index_9_jun.443e9fda.js.map
