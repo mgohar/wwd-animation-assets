@@ -343,7 +343,7 @@ function init() {
   );
   camera.position.x = 0;
   camera.position.y = 0;
-  camera.position.z = 700;
+  camera.position.z = 600;
   camera.lookAt(0, 0, 0);
   // lights
 
@@ -372,7 +372,7 @@ function init() {
   // cloth material
 
   var loader = new THREE.TextureLoader();
-  var clothTexture = loader.load(require("./textures/texturecloth3.png"));
+  var clothTexture = loader.load(require("./textures/texturecloth4.jpeg"));
   clothTexture.anisotropy = 16;
 
   clothMaterial = new THREE.MeshLambertMaterial({

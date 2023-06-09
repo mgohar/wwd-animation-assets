@@ -22508,7 +22508,7 @@ parcelRequire = (function (e, r, t, n) {
         ],
         lnO1: [
             function (require, module, exports) {
-                module.exports = "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.4/dist/texturecloth3.b148d016.png";
+                module.exports = "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png";
             },
             {},
         ],
@@ -22659,7 +22659,7 @@ parcelRequire = (function (e, r, t, n) {
                     t.position.set(50, 200, 100), t.position.multiplyScalar(1.3), (t.castShadow = !0), (t.shadow.mapSize.width = 1024), (t.shadow.mapSize.height = 1024);
                     var i = 300;
                     (t.shadow.camera.left = -i), (t.shadow.camera.right = i), (t.shadow.camera.top = i), (t.shadow.camera.bottom = -i), (t.shadow.camera.far = 1e3), z.add(t);
-                    var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.4/dist/texturecloth3.b148d016.png"));
+                    var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png"));
                     (n.anisotropy = 16),
                         ((o = new e.MeshLambertMaterial({ wireframe: !1, side: e.DoubleSide, alphaTest: 0.5 })).map = n),
                         (D = new e.ParametricBufferGeometry(f, m.w, m.h)),
@@ -22707,7 +22707,7 @@ parcelRequire = (function (e, r, t, n) {
                     G && C(), (G = !1);
                 });
             },
-            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.4/dist/texturecloth3.b148d016.png": "lnO1" },
+            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.0.6/dist/texturecloth3.b148d016.png": "lnO1" },
         ],
     },
     {},
