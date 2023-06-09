@@ -16,7 +16,7 @@ document.body.style.overflow = "hidden";
 
 setTimeout(() => {
   loaderBox.style.display = "none";
-}, 1500);
+}, 2500);
 
 var params = {
   enableWind: false,
