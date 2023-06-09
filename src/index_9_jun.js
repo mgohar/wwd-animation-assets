@@ -378,7 +378,7 @@ function init() {
   // cloth material
 
   var loader = new THREE.TextureLoader();
-  var clothTexture = loader.load(require("./textures/texturecloth4.jpeg"));
+  var clothTexture = loader.load(require("./textures/texturecloth5.jpeg"));
   clothTexture.anisotropy = 16;
 
   clothMaterial = new THREE.MeshLambertMaterial({
