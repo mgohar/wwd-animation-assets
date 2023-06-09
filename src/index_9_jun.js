@@ -483,12 +483,20 @@ function unpinPoints() {
 }
 
 let dropcloth = true;
+let dropcloth1 = true;
 window.addEventListener("wheel", function () {
   if (dropcloth) {
     unpinPoints();
     
   }
   dropcloth = false;
+});
+window.addEventListener("click", function () {
+  if (dropcloth1) {
+    unpinPoints();
+    
+  }
+  dropcloth1 = false;
 });
 
 function animate(now) {
