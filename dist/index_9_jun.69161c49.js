@@ -22508,7 +22508,7 @@ parcelRequire = (function (e, r, t, n) {
         ],
         Kk3f: [
             function (require, module, exports) {
-                module.exports = "/Cloth-Animation-3D-Final.0e97cc5a.jpeg";
+                module.exports = "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.1.4/src/textures/Cloth-Animation-3D-Final.jpeg";
             },
             {},
         ],
