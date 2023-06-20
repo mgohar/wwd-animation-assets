@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/styles.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"index_9_jun.bee188a9.css","sourceRoot":"..","sourcesContent":["body {\n  margin: 0;\n  overscroll-behavior: none;\n}\n\na {\n  text-decoration: none;\n}\n\n\n\n\ncanvas {\n  display: block;\n}\n\n"]}

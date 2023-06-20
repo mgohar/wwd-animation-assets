@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,wBACF,CAEA,EACE,oBACF,CAKA,OACE,aACF","file":"index_9_jun.3e25301c.css","sourceRoot":"..","sourcesContent":["body {\n  margin: 0;\n  overscroll-behavior: none;\n}\n\na {\n  text-decoration: none;\n}\n\n\n\n\ncanvas {\n  display: block;\n}\n\n"]}
