@@ -22664,7 +22664,7 @@ parcelRequire = (function (e, r, t, n) {
                     t.position.set(50, 200, 100), t.position.multiplyScalar(1.3), (t.castShadow = !0), (t.shadow.mapSize.width = 1024), (t.shadow.mapSize.height = 1024);
                     var i = 300;
                     (t.shadow.camera.left = -i), (t.shadow.camera.right = i), (t.shadow.camera.top = i), (t.shadow.camera.bottom = -i), (t.shadow.camera.far = 1e3), z.add(t);
-                    var n = new e.TextureLoader().load(require("./textures/Cloth-Animation-3D-Final.jpeg"));
+                    var n = new e.TextureLoader().load(require("https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.1.4/src/textures/Cloth-Animation-3D-Final.jpeg"));
                     (n.anisotropy = 16),
                         ((a = new e.MeshLambertMaterial({ wireframe: !1, side: e.DoubleSide, alphaTest: 0.5 })).map = n),
                         (O = new e.ParametricBufferGeometry(m, v.w, v.h)),
@@ -22722,7 +22722,7 @@ parcelRequire = (function (e, r, t, n) {
                         _ && G(), (_ = !1);
                     });
             },
-            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "./textures/Cloth-Animation-3D-Final.jpeg": "Kk3f" },
+            { "./styles.css": "D9Nj", three: "gBK8", "three/examples/jsm/libs/dat.gui.module": "X2Ei", "three/examples/jsm/controls/OrbitControls": "x87H", "https://cdn.jsdelivr.net/gh/mgohar/wwd-animation-assets@1.1.4/src/textures/Cloth-Animation-3D-Final.jpeg": "Kk3f" },
         ],
     },
     {},
